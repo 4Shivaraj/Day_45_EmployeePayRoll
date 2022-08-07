@@ -166,12 +166,13 @@ select {
 }
 
 /* media query */
-@media only screen and (max-width: 650px) 
-{
-.form {
-  margin-top: 10px;
-  width: 90%;
+@media only screen and (max-width: 650px) {
+  .form {
+    margin-top: 10px;
+    width: 90%;
+  }
 }
+
 .row {
   flex-direction: column;
 }
@@ -188,18 +189,18 @@ select {
   height: 30px;
   margin-left: 12px;
 }
-  
+
 .submit-reset {
   width: 100%;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
-  justify-content:end;
+  justify-content: end;
   margin-bottom: 20px;
 }
 .buttonParent {
   align-items: flex-start;
 }
 .cancelButton {
-    margin-left: 0px;
+  margin-left: 0px;
 }
