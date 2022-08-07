@@ -1,4 +1,4 @@
-class EmployeePayrollData {
+class EmployeePPayrollData {
   get id() {
     return this._id;
   }
