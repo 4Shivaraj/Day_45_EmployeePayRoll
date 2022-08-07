@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   salary.addEventListener("input", function () {
     output.textContent = salary.value;
   });
+
   const name = document.querySelector("#name");
   const textError = document.querySelector(".text-error");
   name.addEventListener("input", function () {
