@@ -79,7 +79,7 @@ class EmployeePayrollData {
       ", Salary=" +
       this.salary +
       ", StartDate=" +
-      this.startDate +
+      empdate +
       ", Note=" +
       this.note
     );
