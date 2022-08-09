@@ -54,9 +54,10 @@ class EmployeePayrollData {
     return this._startDate;
   }
   set startDate(startDate) {
-    let todayDate = new Date().toLocaleDateString();
-    if (startDate <= todayDate) this._startDate = startDate;
-    else throw "The Given Date is future Date";
+    this._startDate = startDate;
+    // let todayDate = new Date().toLocaleDateString();
+    // if (startDate <= todayDate)
+    // else throw "The Given Date is future Date";
   }
 
   toString() {
@@ -79,7 +80,7 @@ class EmployeePayrollData {
       ", Salary=" +
       this.salary +
       ", StartDate=" +
-      empdate +
+      this.empdate +
       ", Note=" +
       this.note
     );

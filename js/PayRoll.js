@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
     try {
       new EmployeePayrollData().name = name.value;
+      textError.textContent = "";
     } catch (ex) {
       textError.textContent = ex;
     }
@@ -40,6 +41,7 @@ const setTextValue = (id, value) => {
 const save = () => {
   try {
     let employeePayrollData = createEmployeePayroll();
+    createAndUpdateStorage(employeePayrollData);
   } catch (ex) {
     return;
   }
@@ -64,7 +66,7 @@ const createEmployeePayroll = () => {
     getInputValueById("#month") +
     " " +
     getInputValueById("#year");
-  employeePayrollData.startDate = Date.parse(date);
+  employeePayrollData.startDate = new Date(date);
   alert(employeePayrollData.toString());
   return employeePayrollData;
 };
@@ -77,3 +79,15 @@ const getSelectedValues = (propertyValue) => {
   });
   return setItems;
 };
+
+function createAndUpdateStorage(EmpPayrollData) {
+  let empPayrollList = JSON.parse(localStorage.getItem("empPayrollList"));
+
+  if (empPayrollList != undefined) {
+    empPayrollList.push(EmpPayrollData);
+  } else {
+    empPayrollList = [EmpPayrollData];
+  }
+  alert(empPayrollList.toString());
+  localStorage.setItem("empPayrollList", JSON.stringify(empPayrollList));
+}
